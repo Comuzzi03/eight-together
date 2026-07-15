@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 import ExerciseCard from "../components/ExerciseCard";
 import Timer from "../components/Timer";
@@ -8,7 +8,7 @@ import Timer from "../components/Timer";
 import { christianWorkouts, martinaWorkouts } from "../data/workouts";
 import { useSearchParams } from "next/navigation";
 
-export default function WorkoutPage() {
+function WorkoutContent() {
   const searchParams = useSearchParams();
   const user = searchParams.get("user");
 
@@ -347,6 +347,14 @@ setWorkoutCompleted(true);
 </div>
 
     </main>
+  );
+}
+
+export default function WorkoutPage() {
+  return (
+    <Suspense fallback={<div>Caricamento...</div>}>
+      <WorkoutContent />
+    </Suspense>
   );
 }
 
