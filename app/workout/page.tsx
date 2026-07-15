@@ -181,6 +181,24 @@ if (workoutCompleted) {
           )}
         </div>
 
+        <div className="mt-6 flex flex-col gap-3">
+
+          <a
+            href="/"
+            className="w-full bg-green-500 text-black font-bold py-3 rounded-xl text-center"
+          >
+            🏠 Torna alla Home
+          </a>
+
+          <a
+            href="/weight-history"
+            className="w-full bg-zinc-800 text-white font-bold py-3 rounded-xl text-center"
+          >
+            📈 Vedi Progressi
+          </a>
+
+        </div>
+
       </div>
     </main>
   );
