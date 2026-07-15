@@ -107,6 +107,15 @@ export default function WeightHistoryPage() {
           ))
       )}
 
+      <div className="mt-6">
+        <a
+          href="/"
+          className="block w-full bg-green-500 text-black font-bold py-3 rounded-xl text-center"
+        >
+          🏠 Torna alla Home
+        </a>
+      </div>
+
     </main>
   );
 }
