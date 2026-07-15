@@ -57,25 +57,35 @@ export default function HistoryPage() {
             <p>
               🏋️ {item.exercises} esercizi
             </p>
-            {item.completedExercises?.map(
-  (exercise: any, idx: number) => (
-    <div
-      key={idx}
-      className="mt-3 border-t border-zinc-700 pt-3"
-    >
-      <p className="font-bold text-green-400">
-        {exercise.name}
-      </p>
 
-      <p className="text-zinc-300">
-        {exercise.weights.join(" • ")} kg
-      </p>
-    </div>
-  )
-)}
+            {item.completedExercises?.map(
+              (exercise, idx) => (
+                <div
+                  key={idx}
+                  className="mt-3 border-t border-zinc-700 pt-3"
+                >
+                  <p className="font-bold text-green-400">
+                    {exercise.name}
+                  </p>
+
+                  <p className="text-zinc-300">
+                    {exercise.weights.join(" • ")} kg
+                  </p>
+                </div>
+              )
+            )}
           </div>
         ))
       )}
+
+      <div className="mt-6">
+        <a
+          href="/"
+          className="block w-full bg-green-500 text-black font-bold py-3 rounded-xl text-center"
+        >
+          🏠 Torna alla Home
+        </a>
+      </div>
 
     </main>
   );
